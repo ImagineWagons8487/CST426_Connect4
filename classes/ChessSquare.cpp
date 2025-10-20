@@ -13,7 +13,7 @@ void ChessSquare::initHolder(const ImVec2 &position, const char *spriteName, con
 
 bool ChessSquare::canDropBitAtPoint(Bit *newbit, const ImVec2 &point)
 {
-    if (bit() == nullptr)
+    if (!bit())
     {
         return true;
     }

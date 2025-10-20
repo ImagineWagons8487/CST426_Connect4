@@ -75,7 +75,7 @@ void Game::setAIPlayer(unsigned int playerNumber)
 {
 	_players.at(playerNumber)->setAIPlayer(true);
 	_gameOptions.AIPlayer = playerNumber;
-	_gameOptions.AIPlayer = true;
+	_gameOptions.AIPlaying = true;
 }
 
 void Game::startGame()
@@ -335,9 +335,19 @@ void Game::mouseUp(ImVec2 &location, Entity *entity)
 	if (!_dragBit)
 	{
 		// If no bit was clicked, see if it's a BitHolder the game will let the user add a Bit to:
-		if (entity && entity->getEntityType() == Entity::EntityBitHolder)
+		if (entity 
+			&& (entity->getEntityType() == Entity::EntityBitHolder || entity->getEntityType() == Entity::EntityBit))
 		{
-			BitHolder *holder = (BitHolder *)entity;
+			BitHolder *holder;
+			if(entity->getEntityType() == Entity::EntityBit)
+			{
+				Bit *bit = (Bit *)entity;
+				holder = bit->getHolder();
+			}
+			else
+			{
+				holder = (BitHolder *)entity;
+			}
 			if (actionForEmptyHolder(*holder))
 			{
 				_dropTarget = nullptr;

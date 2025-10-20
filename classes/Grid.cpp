@@ -90,21 +90,25 @@ ChessSquare* Grid::getBR(int x, int y)
 
 ChessSquare* Grid::getN(int x, int y)
 {
+    // Get North
     return getSquare(x, y - 1);
 }
 
 ChessSquare* Grid::getS(int x, int y)
 {
+    // Get South
     return getSquare(x, y + 1);
 }
 
 ChessSquare* Grid::getE(int x, int y)
 {
+    // Get East
     return getSquare(x + 1, y);
 }
 
 ChessSquare* Grid::getW(int x, int y)
 {
+    // Get West
     return getSquare(x - 1, y);
 }
 

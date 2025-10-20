@@ -25,13 +25,13 @@ public:
     int getIndex(int x, int y) const { return y * _width + x; }
     void getCoordinates(int index, int& x, int& y) const;
 
-    // Directional helpers (built into Grid)
+    // Directional helpers (built into Grid) FOR CHESS
     ChessSquare* getFL(int x, int y);  // front-left (up-left diagonal)
     ChessSquare* getFR(int x, int y);  // front-right (up-right diagonal)
     ChessSquare* getBL(int x, int y);  // back-left (down-left diagonal)
     ChessSquare* getBR(int x, int y);  // back-right (down-right diagonal)
 
-    // Orthogonal directions
+    // Orthogonal directions FOR CHESS
     ChessSquare* getN(int x, int y);   // north (up)
     ChessSquare* getS(int x, int y);   // south (down)
     ChessSquare* getE(int x, int y);   // east (right)

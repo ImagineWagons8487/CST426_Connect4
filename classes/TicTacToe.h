@@ -29,7 +29,7 @@ public:
 
 	void        updateAI() override;
     bool        gameHasAI() override { return true; }
-    Grid* getGrid() override { return _grid; }
+    Grid*       getGrid() override { return _grid; }
 private:
     Bit *       PieceForPlayer(const int playerNumber);
     Player*     ownerAt(int index ) const;
